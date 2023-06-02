@@ -2,7 +2,7 @@ package com.hh.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hh.entity.Stock_tv;
-import com.hh.mapper.StockMapper;
+import com.hh.mapper.StockTvMapper;
 import com.hh.service.TvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class TvServiceImpl implements TvService {
     @Autowired
-    private StockMapper stockMapper;
+    private StockTvMapper stockMapper;
 
     @Override
     public List<String> getStockNameList() {

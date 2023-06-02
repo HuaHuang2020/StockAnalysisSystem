@@ -3,7 +3,6 @@ package com.hh.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hh.entity.Stock_tv;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * @Author HH
@@ -11,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Mapper
-public interface StockMapper extends BaseMapper<Stock_tv> {
+public interface StockTvMapper extends BaseMapper<Stock_tv> {
 
 }
