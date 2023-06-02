@@ -12,5 +12,6 @@ import java.util.List;
 public interface TvService {
     List<String> getStockNameList();
     List<Stock_tv> getStockDataByName(String name);
+    List<Stock_tv> getStockDataList();
 
 }

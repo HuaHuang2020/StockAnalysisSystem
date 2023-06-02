@@ -12,8 +12,8 @@ import lombok.Data;
 public class Stock_kline {
     String stock_name;
     String stock_date;
-    Integer opening_price;
-    Integer closing_price;
-    Integer highest_price;
-    Integer lowest_price;
+    Double opening_price;
+    Double closing_price;
+    Double highest_price;
+    Double lowest_price;
 }

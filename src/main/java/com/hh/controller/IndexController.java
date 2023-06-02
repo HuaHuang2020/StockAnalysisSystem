@@ -1,8 +1,10 @@
 package com.hh.controller;
 
+import com.hh.entity.Stock_ad;
 import com.hh.entity.Stock_kline;
 import com.hh.entity.Stock_ta;
 import com.hh.entity.Stock_tv;
+import com.hh.service.AdService;
 import com.hh.service.KLineService;
 import com.hh.service.TaService;
 import com.hh.service.TvService;
@@ -34,12 +36,18 @@ public class IndexController {
     private TaService taService;
     @Autowired
     private KLineService kLineService;
+    @Autowired
+    private AdService adService;
 
     @ApiOperation("查询所有股票的名字")
     @GetMapping("/list")
     public List<String> getStockNameList(){
         return tvService.getStockNameList();
     }
+
+    @ApiOperation("查询所有股票的成交量")
+    @GetMapping("/tv/list")
+    public List<Stock_tv> getStockDataList() {return tvService.getStockDataList();}
 
     @ApiOperation("返回该名字的所有股票成交量数据")
     @ApiImplicitParams({
@@ -68,6 +76,20 @@ public class IndexController {
     public List<Stock_kline> getKLineDataByName3(@PathVariable String name){
         return kLineService.getDataByName(name);
     }
+
+
+    @ApiOperation("获取所有股票的名字--涨跌相关")
+    @GetMapping("/name/ad")
+    public List<String> getAdNameList(){
+        return adService.getStockAdNameList();
+    }
+
+    @ApiOperation("根据名字获取股票所有涨跌--以日为单位")
+    @GetMapping("/{name}/ad")
+    public List<Stock_ad> getAdByName(@PathVariable String name){
+        return adService.getStockAdByName(name);
+    }
+
 
 
 }

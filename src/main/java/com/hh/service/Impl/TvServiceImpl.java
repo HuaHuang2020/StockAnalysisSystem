@@ -35,5 +35,10 @@ public class TvServiceImpl implements TvService {
         return stockData;
     }
 
+    @Override
+    public List<Stock_tv> getStockDataList() {
+        return stockMapper.selectList(null);
+    }
+
 
 }
